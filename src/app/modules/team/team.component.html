@@ -1,0 +1,21 @@
+<table class="team home-team" *ngIf="venue == 'home'">
+    <tr>
+        <th class="logo" rowspan="2"><img class="logo" src='{{team.logo}}' /></th>
+        <th class="name" rowspan="2">{{team.abrv}}</th>
+        <td class="player">{{team.players[0].abrv}}</td>
+    </tr>
+    <tr>
+        <td class="player">{{team.players[1].abrv}}</td>
+    </tr>
+</table>
+
+<table class="team away-team" *ngIf="venue == 'away'">
+    <tr>
+        <td class="player">{{team.players[0].abrv}}</td>
+        <th class="name" rowspan="2">{{team.abrv}}</th>
+        <th class="logo" rowspan="2"><img class="logo" src='{{team.logo}}' /></th>
+    </tr>
+    <tr>
+        <td class="player">{{team.players[1].abrv}}</td>
+    </tr>
+</table>

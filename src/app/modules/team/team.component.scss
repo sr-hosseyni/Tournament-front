@@ -1,0 +1,39 @@
+@import "src/theme/theme-variables";
+
+%team {
+    padding: 0 10px;
+}
+
+table.team {
+    width: 100px;
+
+    th.name {
+        @extend %team;
+
+    }
+
+    th.player {
+        @extend %team;
+    }
+
+    th.logo {
+        padding: 0;
+    }
+}
+
+table.home-team {
+    //margin-left: 10px;
+
+}
+
+table.away-team {
+    float: right;
+    //margin-right: 10px;
+}
+
+table.team img.logo {
+    width: $matchHeight;
+    height: $matchHeight;
+    border-radius: $matchRadius * 2;
+    border: solid 0px white;
+}

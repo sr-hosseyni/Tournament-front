@@ -1,0 +1,27 @@
+table.table {
+    width: 100%;
+    text-align: center;
+
+    thead {
+        background: $brand-primary;
+        color: $white;
+        font-weight: bold;
+        border-bottom: 2px solid $brand-inverse;
+
+        tr {
+            border: 1px solid $brand-primary;
+
+            td {
+                height: 50px;
+                padding: 0 3px;
+                vertical-align: middle;
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            border: 1px solid $gray-lighter;
+        }
+    }
+}

@@ -1,0 +1,29 @@
+@import "src/theme/theme-variables";
+
+div.match-editor-container {
+    width: 500px;
+    text-align: center;
+
+    div.timer-progress {
+        margin: 0 $matchRadius;
+        height: 16px;
+        padding: 0;
+
+        ngb-progressbar .progress {
+            //height: 3px;
+        }
+    }
+
+    .timer span{
+        margin: 0;
+        padding: 3px 20px;
+        //border-radius: 100px 100px 0 0;
+        font-family: monospace;
+        font-size: 20px;
+        font-weight: bold;
+        background-color: $brand-inverse;
+        //color: darken($brand-primary, 10);
+        color: $brand-primary;
+    }
+}
+

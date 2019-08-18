@@ -1,0 +1,107 @@
+@import "src/theme/theme-variables";
+
+table.match {
+    margin: auto;
+    width: 100%;
+    background: $brand-primary;
+    border-radius: $matchRadius * 2;
+    border-collapse: collapse;
+    border-spacing: 0;
+    color: white;
+    text-align: center;
+
+    div.schedule {
+        color: black;
+        font-size: 11px;
+    }
+
+    %scores {
+        background: $white;
+    }
+
+    col.away-scores {
+        @extend %scores;
+
+    }
+
+    td.away-scores {
+        //border-radius: 0 5px 0 5px;
+    }
+
+    td.home-scores {
+        //border-radius: 5px 0 5px 0;
+    }
+
+    col.home-scores {
+        @extend %scores;
+    }
+
+    tr.detail td {
+        height: 16px;
+        border: 0 none;
+        padding: 0;
+    }
+
+    td.result {
+        padding: 0;
+        margin: 0;
+
+        div {
+            width: 40px;
+            height: $matchHeight * 0.7;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 50px;
+            text-align: center;
+            padding: 0;
+            margin: auto;
+            //border-radius: 30px;
+            //background: mediumpurple;
+            //background: darken($brand-primary, 10);
+            background: $brand-inverse;
+            color: $brand-primary;
+        }
+    }
+
+    th {
+        padding: 0;
+    }
+
+    col.home-team {
+        text-align: left;
+        width: 220px;
+    }
+
+    col.away-team {
+        width: 220px;
+
+        th {
+            text-align: right;
+        }
+    }
+
+    col.away-scores, col.home-scores {
+        text-align: center;
+        width: 30px;
+    }
+
+    div.match-detail-toggle {
+        cursor: pointer;
+        //border-radius: 10px 10px 0 0;
+        color: white;
+        background-color: $brand-secondary;
+        height: $matchHeight * 0.3;
+        font-size: 12px;
+    }
+
+    div.match-detail {
+        div.card {
+            padding: 0;
+        }
+    }
+}
+
+div.match-tabset {
+    margin: 0 $matchRadius;
+    height: 225px;
+}

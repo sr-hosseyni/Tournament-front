@@ -1,0 +1,65 @@
+<table class="match">
+    <colgroup>
+        <col class="home-team" />
+        <col class="home-scores" />
+        <col class="away-scores "/>
+        <col class="away-team" />
+    </colgroup>
+    <tr>
+        <th rowspan="2">
+            <app-team [team]="match.teams[0]" [venue]="'home'"></app-team>
+        </th>
+
+        <td colspan="2" *ngIf="match.status == Enums.Match.Status.UNSTARTED">
+            <div class="schedule">{{match.schedule}}</div>
+        </td>
+
+        <td *ngIf="match.status != Enums.Match.Status.UNSTARTED" class="result home-scores">
+            <div>{{match.results[0].goalsFor[match.teams[0].id]}}</div>
+        </td>
+        <td *ngIf="match.status != Enums.Match.Status.UNSTARTED" class="result away-scores">
+            <div>{{match.results[0].goalsFor[match.teams[1].id]}}</div>
+        </td>
+
+        <th rowspan="2">
+            <app-team [team]="match.teams[1]" [venue]="'away'"></app-team>
+        </th>
+    </tr>
+    <tr class="detail">
+        <td colspan="2">
+            <div class="match-detail-toggle" (click)="isCollapsed = !isCollapsed"
+                    [attr.aria-expanded]="isCollapsed" aria-controls="match-detail">
+                Details
+            </div>
+        </td>
+    </tr>
+</table>
+<div id="match-detail" [ngbCollapse]="isCollapsed">
+    <div class="card">
+        <div class="card-block">
+            <div class="match-tabset">
+                <ngb-tabset activeId="getActiveTabId()">
+                    <ngb-tab id="1" title="Match Facts">
+                        <ng-template ngbTabContent>
+                            <app-match-events
+                                [events]="match.events"
+                                [teams]="match.teams">
+                            </app-match-events>
+                        </ng-template>
+                    </ngb-tab>
+                    <ngb-tab id="2">
+                        <ng-template ngbTabTitle>Line up</ng-template>
+                        <ng-template ngbTabContent>
+                            <app-lineup [teams]="match.teams"></app-lineup>
+                        </ng-template>
+                    </ngb-tab>
+                    <ngb-tab id="3" title="Disabled" [disabled]="true">
+                        <ng-template ngbTabContent>
+                            this is disabled
+                        </ng-template>
+                    </ngb-tab>
+                </ngb-tabset>
+            </div>
+        </div>
+    </div>
+</div>

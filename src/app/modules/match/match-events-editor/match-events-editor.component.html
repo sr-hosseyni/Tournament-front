@@ -1,0 +1,19 @@
+<div class="match-events-editor">
+    <div class="team-scores" *ngFor="let team of match.teams">
+        <div class="btn-group" data-toggle="buttons" *ngIf="match.status == Enums.Match.Status.ONGOING">
+            <button class="btn btn-outline-success btn-sm" *ngFor="let player of team.players" (click)="goal(team, player)">Goal {{player.abrv}}</button>
+        </div>
+    </div>
+    <div class="team-own-goals" *ngFor="let team of match.teams">
+         <div class="btn-group" data-toggle="buttons" *ngIf="match.status == Enums.Match.Status.ONGOING">
+            <button class="btn btn-outline-danger btn-sm" *ngFor="let player of team.players" (click)="ownGoal(team, player)">Goal {{player.abrv}}</button>
+        </div>
+    </div>
+
+    <div [ngSwitch]="match.status">
+        <button class="btn btn-secondary btn-sm" *ngSwitchCase="Enums.Match.Status.UNSTARTED" (click)="startTime()">Start</button>
+        <button class="btn btn-secondary btn-sm" *ngSwitchCase="Enums.Match.Status.ONGOING" (click)="pauseTime()">Pause</button>
+        <button class="btn btn-secondary btn-sm" *ngSwitchCase="Enums.Match.Status.TIMEOUT" (click)="resumeTime()">Resume</button>
+        <button class="btn btn-secondary btn-sm" *ngSwitchCase="Enums.Match.Status.ONGOING" (click)="finishTime()">Finish</button>
+    </div>
+</div>

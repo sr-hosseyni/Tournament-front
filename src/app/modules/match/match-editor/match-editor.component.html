@@ -1,0 +1,18 @@
+<div class="match-editor-container">
+    <div class="timer">
+        <span>
+            {{timer.getFormattedElapsedTime()}}
+        </span>
+        <span *ngIf="match.status == Enums.Match.Status.TIMEOUT">
+            {{timer.getFormattedElapsedTimeout()}}
+        </span>
+    </div>
+    <div class="timer-progress">
+        <ngb-progressbar type="success" [striped]="true" height="2px" [value]="timer.getElapsedPercentage()">
+<!--            {{timer.getFormattedElapsedTime()}}-->
+        </ngb-progressbar>
+    </div>
+    <app-match [match]="match"></app-match>
+    <!--<app-match-result-editor></app-match-result-editor>-->
+    <app-match-events-editor [timer]="timer" [match]="match"></app-match-events-editor>
+</div>

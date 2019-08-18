@@ -1,0 +1,11 @@
+<ul class="match-list">
+    <li *ngFor="let match of matches">
+        <app-match-editor [match]="match"></app-match-editor>
+    </li>
+</ul>
+
+<ul class="match-list">
+    <li *ngFor="let match of matches">
+        <app-match [match]="match"></app-match>
+    </li>
+</ul>

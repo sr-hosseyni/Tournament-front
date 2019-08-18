@@ -1,0 +1,27 @@
+@import "src/theme/theme-variables";
+
+div.match-events {
+    // margin: 0 $matchRadius;
+    max-height: 180px;
+    overflow-y: scroll;
+    //background: /* @transparentize */ rgba(138, 43, 226, 0.08);
+    background: $gray-lightest;
+}
+
+div.match-events {
+    col.home-etype, col.away-etype {
+        width: $matchRadius;
+    }
+
+    col.home-player, col.away-player {
+        width: 188px;
+    }
+
+    col.time {
+        width: 60px;
+    }
+
+    .own-goal {
+        color: $brand-danger;
+    }
+}

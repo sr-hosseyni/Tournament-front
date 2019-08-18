@@ -1,0 +1,39 @@
+@import "src/theme/theme-variables";
+
+.logo {
+  width: 100px;
+}
+
+q {
+  font-style: italic;
+  font-size: 1.2rem;
+  quotes: "« " " »";
+}
+
+.logo {
+    width: 100px;
+}
+
+q {
+    font-style: italic;
+    font-size: 1.2rem;
+    quotes: "« " " »";
+}
+
+table {
+    width: 100%;
+
+    tr { height: 25px; }
+    .gray-dark { background: $gray-dark; }
+    .gray { background: $gray; }
+    .gray-light { background: $gray-light; }
+    .gray-lighter { background: $gray-lighter; }
+    .gray-lightest { background: $gray-lightest; }
+    .brand-primary { background: $brand-primary; }
+    .brand-secondary { background: $brand-secondary; }
+    .brand-success { background: $brand-success; }
+    .brand-info { background: $brand-info; }
+    .brand-warning { background: $brand-warning; }
+    .brand-danger { background: $brand-danger; }
+    .brand-inverse { background: $brand-inverse; }
+}

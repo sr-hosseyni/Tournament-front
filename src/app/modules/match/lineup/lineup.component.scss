@@ -1,0 +1,29 @@
+@import "src/theme/theme-variables";
+
+div.lineup {
+    img.ground {
+        height: 100px;
+    }
+
+    img.player {
+        height: 32px;
+        width: 32px;
+        border: solid 1px $brand-primary;
+        background: $brand-primary;
+        border-radius: 32px;
+    }
+
+    table {
+        margin: auto;
+        height: 164px;
+        width: 150px;
+    }
+}
+
+div.x {
+    width: 10px;
+}
+
+div.x div.y {
+
+}

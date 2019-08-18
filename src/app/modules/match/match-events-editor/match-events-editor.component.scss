@@ -1,0 +1,26 @@
+@import "src/theme/theme-variables";
+
+div.match-events-editor {
+    margin: 0 $matchRadius;
+
+
+    div.team-scores, div.team-own-goals {
+        width: 50%;
+        margin: 0;
+        padding: 2px;
+        float: left;
+    }
+
+    div.team-scores button, div.team-own-goals button {
+        width: 50%;
+    }
+
+    div.team-own-goals button {
+    }
+
+    //.app-btn {
+    //background-color: mediumturquoise;
+    //border: -5px solid white;
+    //margin: 2px 0;
+    //}
+}

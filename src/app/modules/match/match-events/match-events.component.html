@@ -1,0 +1,47 @@
+<div class="match-events" #scrollMe>
+    <table>
+        <colgroup>
+            <col class="home-etype" />
+            <col class="home-player" />
+            <col class="time" />
+            <col class="away-player" />
+            <col class="away-etype" />
+        </colgroup>
+        <tr *ngFor="let event of events">
+
+            <!--first col-->
+            <td *ngIf="!(event.isPlayerOriented() && event.teamId == teams[1].id)">
+                <div [ngSwitch]="event.etype">
+                    <i *ngSwitchCase="1" class="fa fa-futbol-o" aria-hidden="true" [ngClass]="{'fa-spin' : !event.sent, 'own-goal' : event.isOwnGoal}"></i>
+                    <i *ngSwitchCase="2" class="fa fa-flag" aria-hidden="true" [ngClass]="{'fa-spin' : !event.sent}"></i>
+                </div>
+            </td>
+            <td *ngIf="event.isPlayerOriented() && event.teamId == teams[1].id"></td>
+
+            <!--second col-->
+            <td *ngIf="event.isPlayerOriented() && event.teamId == teams[0].id">
+                {{getPlayerFullName(event, "GOAL")}}
+            </td>
+            <td *ngIf="event.isPlayerOriented() && event.teamId == teams[1].id"></td>
+
+            <td *ngIf="!event.isPlayerOriented()">Match Start</td>
+            <td>{{event.getFormattedTime()}}</td>
+            <td colspan="2" *ngIf="!event.isPlayerOriented()"></td>
+
+            <td *ngIf="event.isPlayerOriented() && event.teamId == teams[1].id">
+                {{getPlayerFullName(event, "GOAL")}}
+            </td>
+            <td *ngIf="event.isPlayerOriented() && event.teamId == teams[0].id"></td>
+
+            <td *ngIf="event.isPlayerOriented() && event.teamId == teams[1].id">
+                <div [ngSwitch]="event.etype">
+                    <i *ngSwitchCase="1" class="fa fa-futbol-o" aria-hidden="true" [ngClass]="{'fa-spin' : !event.sent}"></i>
+                    <i *ngSwitchCase="2" class="fa fa-futbol-o own-goal" aria-hidden="true" [ngClass]="{'fa-spin' : !event.sent}"></i>
+                    <i *ngSwitchCase="5" class="fa fa-refresh" aria-hidden="true" [ngClass]="{'fa-spin' : !event.sent}"></i>
+                </div>
+            </td>
+            <td *ngIf="event.isPlayerOriented() && event.teamId == teams[0].id"></td>
+
+        </tr>
+    </table>
+</div>
